@@ -1,30 +1,31 @@
-const cards = document.querySelectorAll('.memory-card');
+const cards = document.querySelectorAll(".memory-card");
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let moves = 1;
-let time = 60
-let timer = true
+let time = 60;
+let timer = true;
 
-var interval = setInterval(function() {
-  document.querySelector('.time').innerHTML = time--;
-    if (time == -1) {
-        clearInterval(interval);
-        alert("Time's up!")
-    }
+var interval = setInterval(function () {
+  document.querySelector(".time").innerHTML = time--;
+  if (time == -1) {
+    clearInterval(interval);
+    alert("Time's up!");
+  }
 }, 1000);
 
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
 
-  this.classList.add('flip');
-   document.querySelector('.moves').innerHTML = moves++;
+  this.classList.add("flip");
+  document.querySelector(".moves").innerHTML = moves++;
 
-    let flipped = document.querySelectorAll('.flip')
-  if(flipped.length == 12 && time >= 0){
-    alert("You won!")
+  let flipped = document.querySelectorAll(".flip");
+  if (flipped.length == 12 && time >= 0) {
+    clearInterval(interval);
+    alert("You won!");
   }
 
   if (!hasFlippedCard) {
@@ -48,8 +49,8 @@ function checkForMatch() {
 }
 
 function disableCards() {
-  firstCard.removeEventListener('click', flipCard);
-  secondCard.removeEventListener('click', flipCard);
+  firstCard.removeEventListener("click", flipCard);
+  secondCard.removeEventListener("click", flipCard);
 
   resetBoard();
 }
@@ -58,8 +59,8 @@ function unflipCards() {
   lockBoard = true;
 
   setTimeout(() => {
-    firstCard.classList.remove('flip');
-    secondCard.classList.remove('flip');
+    firstCard.classList.remove("flip");
+    secondCard.classList.remove("flip");
 
     resetBoard();
   }, 1500);
@@ -71,14 +72,14 @@ function resetBoard() {
 }
 
 (function shuffle() {
-  cards.forEach(card => {
+  cards.forEach((card) => {
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
 })();
 
-cards.forEach(card => card.addEventListener('click', flipCard));
+cards.forEach((card) => card.addEventListener("click", flipCard));
 
-document.querySelector('.reset').addEventListener('click', function(){
-  location.reload()
-})
+document.querySelector(".reset").addEventListener("click", function () {
+  location.reload();
+});
