@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="./assets/style.css" rel="stylesheet">
+    <title>Animal Memory Game</title>
+</head>
+
+<!---------------------This section includes the header with the game name and information on game play---------------------->
+<body>
+  <h1 class="heading">Animal Memory Game</h1>
+
+  <div class="desc">
+    <p>How to play: Find all 8 pairs of animals in the 60 seconds you are given</p>
+    <p>There is a timer and a counter keeping a record of your moves. Good luck and enjoy!</p>
+  </div>
+       
+<!---------------------This section includes the moves counter and time counter---------------------->
+
+ <div class="counters">
+    <p>Moves: <span class="moves"></span></p>
+    <p>Time: <span class="time"></span></p>
+  </div>
+
+<!---------------------This section includes the game framework---------------------->
+<section class="memory-game">
+    <div class="memory-card" data-framework="bird">
+      <img class="front-face" src="./assets/images/bird.png" alt="Bird" />
+      <img class="back-face" src="./assets/images/js-badge.svg" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="bird">
+      <img class="front-face" src="./assets/images/bird.png" alt="Bird" />
+      <img class="back-face" src="./assets/images/js-badge.svg" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework="cat">
+      <img class="front-face" src="./assets/images/cat.png" alt="Cat" />
+      <img class="back-face" src="./assets/images/js-badge.svg" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="cat">
+      <img class="front-face" src="./assets/images/cat.png" alt="Cat" />
+      <img class="back-face" src="./assets/images/js-badge.svg" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework="cow">
+      <img class="front-face" src="./assets/images/cow.png" alt="Cow" />
+      <img class="back-face" src="./assets/images/js-badge.svg" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="cow">
+      <img class="front-face" src="./assets/images/cow.png" alt="Cow" />
+      <img class="back-face" src="./assets/images/js-badge.svg" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework="dog">
+      <img class="front-face" src="./assets/images/dog.png" alt="Dog" />
+      <img class="back-face" src="./assets/images/js-badge.svg" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="dog">
+      <img class="front-face" src="./assets/images/dog.png" alt="Dog" />
+      <img class="back-face" src="./assets/images/js-badge.svg" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework="elephant">
+      <img class="front-face" src="./assets/images/elephant.png" alt="Elephant" />
+      <img class="back-face" src="./assets/images/js-badge.svg" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="elephant">
+      <img class="front-face" src="./assets/images/elephant.png" alt="Elephant" />
+      <img class="back-face" src="./assets/images/js-badge.svg" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework="fish">
+      <img class="front-face" src="./assets/images/fish.png" alt="Fish" />
+      <img class="back-face" src="./assets/images/js-badge.svg" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="fish">
+      <img class="front-face" src="./assets/images/fish.png" alt="Fish" />
+      <img class="back-face" src="./assets/images/js-badge.svg" alt="JS Badge" />
+    </div>
+  </section>
+
+  <div class="reset-div">
+    <button class="reset">Reset</button>
+  </div>
+
+<!--------------------This section includes the javascript tag---------------------->
+
+<script src="./assets/script.js"> </script>
+</body>
+</html>
