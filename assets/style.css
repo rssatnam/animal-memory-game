@@ -15,7 +15,11 @@ body {
 }
 
 .counters {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   width: 90%;
   margin: auto;
@@ -29,8 +33,12 @@ body {
   width: 600px;
   height: 600px;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-perspective: 1000px;
   perspective: 1000px;
 }
 
@@ -39,18 +47,28 @@ body {
   height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
+  -webkit-transform: scale(1);
   transform: scale(1);
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .memory-card:active {
+  -webkit-transform: scale(0.97);
   transform: scale(0.97);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
 .memory-card.flip {
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
@@ -62,10 +80,12 @@ body {
   position: absolute;
   border-radius: 5px;
   background: #1c7ccc;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 .front-face {
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
@@ -109,6 +129,7 @@ body {
   }
 
   .front-face {
+    -o-object-fit: cover;
     object-fit: cover;
   }
 }
